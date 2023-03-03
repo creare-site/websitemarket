@@ -9,11 +9,14 @@ var sass = require('gulp-sass')(require('sass'));
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var open = require('gulp-open');
+
 const cleanCss = require('gulp-clean-css');
+const htmlmin = require('gulp-htmlmin');
 
 var Paths = {
   HERE: './',
   DIST: 'dist/',
+  HTML: 'src/',
   CSS: './assets/css/',
   SCSS_TOOLKIT_SOURCES: './assets/scss/web-agency.scss',
   SCSS: './assets/scss/**/**'
@@ -31,11 +34,20 @@ gulp.task('scss', function() {
 
 gulp.task('watch', function() {
   gulp.watch(Paths.SCSS, gulp.series('scss'));
+  gulp.watch(Paths.HTML, gulp.series('minify'));
 });
 
 gulp.task('open', function() {
   gulp.src('index.html')
     .pipe(open());
 });
+
+gulp.task('minify', () => {
+  return gulp.src('src/*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('.'));
+});
+
+gulp.task('prod', gulp.parallel('scss', 'minify'));
 
 gulp.task('default', gulp.parallel('open', 'watch'));
