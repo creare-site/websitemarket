@@ -66,8 +66,6 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
       rel="stylesheet"
     />
 
-    <!-- Video-Popup CSS -->
-    <link id="pagestyle" href="./assets/css/video-popup.css" rel="stylesheet" />
   </head>
 
   <body
@@ -157,10 +155,10 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
           <div class="main-banner">
             <figure class="figure d-block top-section-figure mb-0">
               <img
-                class="figure-img img-fluid d-block mx-auto mb-0"
+                class="lazy figure-img img-fluid d-block mx-auto mb-0"
                 data-aos="zoom-in"
                 src="assets/img/banner-01.png"
-                alt=""
+                alt="WebsiteMarket"
               />
             </figure>
             <div class="container-xxl">
@@ -603,7 +601,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
               >
                 <img
                   class="figure-img img-fluid d-block mb-0"
-                  src="assets/img/unique-img-01.jpg"
+                  src="assets/img/unique-img-01.png"
                   alt=""
                 />
                 <div class="project-block-card position-absolute">
@@ -623,7 +621,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
               >
                 <img
                   class="figure-img img-fluid d-block mb-0"
-                  src="assets/img/unique-img-02.jpg"
+                  src="assets/img/unique-img-02.png"
                   alt=""
                 />
                 <div class="project-block-card position-absolute">
@@ -644,7 +642,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
                 >
                   <img
                     class="figure-img img-fluid d-block mb-0"
-                    src="assets/img/unique-img-03.jpg"
+                    src="assets/img/unique-img-03.png"
                     alt=""
                   />
                   <div class="project-block-card position-absolute">
@@ -664,7 +662,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
                 >
                   <img
                     class="figure-img img-fluid d-block mb-0"
-                    src="assets/img/unique-img-04.jpg"
+                    src="assets/img/unique-img-04.png"
                     alt=""
                   />
                   <div class="project-block-card position-absolute">
@@ -686,7 +684,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
               >
                 <img
                   class="figure-img img-fluid d-block mb-0"
-                  src="assets/img/unique-img-05.jpg"
+                  src="assets/img/unique-img-05.png"
                   alt=""
                 />
                 <div class="project-block-card position-absolute">
@@ -712,7 +710,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
               >
                 <img
                   class="figure-img img-fluid d-block mb-0"
-                  src="assets/img/e-commerce-img.jpg"
+                  src="assets/img/e-commerce-img.png"
                   alt=""
                 />
                 <div class="project-block-card position-absolute">
@@ -767,7 +765,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
                   <div class="client-card d-flex align-items-center">
                     <img
                       class="client-card-img radius-tl"
-                      src="assets/img/client-01.jpg"
+                      src="assets/img/client-01.png"
                       alt=""
                     />
                     <div class="client-card-body">
@@ -819,7 +817,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
                   <div class="client-card d-flex align-items-center">
                     <img
                       class="client-card-img radius-tr"
-                      src="assets/img/client-02.jpg"
+                      src="assets/img/client-02.png"
                       alt=""
                     />
                     <div class="client-card-body">
@@ -871,7 +869,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
                   <div class="client-card d-flex align-items-center">
                     <img
                       class="client-card-img radius-br"
-                      src="assets/img/client-03.jpg"
+                      src="assets/img/client-03.png"
                       alt=""
                     />
                     <div class="client-card-body">
@@ -1101,7 +1099,7 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
                   <li class="footer-listing-item">
                     <a
                       class="footer-listing-item-link"
-                      href="contact-section"
+                      href="#contact-section"
                       title="Services"
                       >Contact</a
                     >
@@ -1236,15 +1234,18 @@ Servicii Web - Site-uri Web, Hosting, eCommerce | WebsiteMarket
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/cjs/popper.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/perfect-scrollbar@1.5.5/dist/perfect-scrollbar.min.js"></script>
+
+    <!-- Lazy Load -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.6.1/dist/lazyload.min.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Theme JS -->
     <script src="./assets/js/web-agency.js"></script>
 
-    <!-- Video-Popup JS -->
-    <script src="./assets/js/video-popup.js"></script>
-
     <script>
-      // Custom page JS goes here (added by the users)
+      // lazy images
+      var lazyLoadInstance = new LazyLoad({});
+      
       // Animate
       AOS.init({
         disable: "mobile",
