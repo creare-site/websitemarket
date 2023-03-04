@@ -34,7 +34,7 @@ gulp.task('scss', function() {
 
 gulp.task('watch', function() {
   gulp.watch(Paths.SCSS, gulp.series('scss'));
-  gulp.watch(Paths.HTML, gulp.series('minify'));
+  gulp.watch(Paths.HTML, gulp.series('compressHtml'));
 });
 
 gulp.task('open', function() {
@@ -42,12 +42,12 @@ gulp.task('open', function() {
     .pipe(open());
 });
 
-gulp.task('minify', () => {
+gulp.task('compressHtml', () => {
   return gulp.src('src/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('prod', gulp.parallel('scss', 'minify'));
+gulp.task('prod', gulp.parallel('scss', 'compressHtml'));
 
 gulp.task('default', gulp.parallel('open', 'watch'));
